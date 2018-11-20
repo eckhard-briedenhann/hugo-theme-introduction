@@ -39,6 +39,54 @@ h1, h2, .title, .subtitle
 ul
     padding: 0
 
+h1.terminal-text
+    animation: blink-caret .75s step-end infinite, typing 3s steps(16, end)
+    border-right: .40em solid $secondary
+    text-align: center
+    overflow: hidden
+    margin-left: auto
+    margin-right: auto
+    white-space: nowrap
+    width: 80%
+    @include mobile
+        border-right: none
+        white-space: pre-wrap
+        animation: none
+        width: 100%
+
+
+span#terminal-start
+    color: $secondary
+    overflow: hidden
+    @include mobile
+        visibility: hidden
+
+@keyframes typing 
+  from 
+       width: 10% 
+  to 
+      width: 75% 
+  @include mobile
+    from 
+        width: 0 
+    to 
+        width: 100% 
+
+
+
+/* The typewriter cursor effect */
+@keyframes blink-caret 
+  from, to 
+       border-color: transparent 
+  50% 
+      border-color: $secondary
+
+
+
+img, .profile
+    width: 25%
+    height: 25%
+
 img
     border-radius: 5px
     border: 1px solid $secondary
@@ -123,7 +171,7 @@ hr
     background-color: $navbar-background-color
 
 .navbar-item
-    text-transform: uppercase
+    // text-transform: uppercase
     font-size: 14px
 
 .owl-nav

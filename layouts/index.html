@@ -15,8 +15,9 @@
                 <div class="hero-body">
                     <div class="container has-text-centered">
                         <!-- Title and tagline -->
-                        <h1 class="bold-title {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in one{{ end }}">
-                            {{ .Title }}
+                        <!-- <h1 class="bold-title {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in one{{ end }}"> -->
+                        <h1 class="bold-title terminal-text">
+                             <span id="terminal-start">> </span> {{ .Title }} 
                         </h1>
                         <div class="subtitle is-3 {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in two{{ end }}">
                             {{ .Content }}
