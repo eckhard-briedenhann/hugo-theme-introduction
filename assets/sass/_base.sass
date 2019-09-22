@@ -25,13 +25,19 @@ html.modal-open
 a
     color: $primary
     &:hover
-        color: $link-hover
+        color: $primary
         font-style: none
     &:active
         color: $primary
 
+a.s-icons
+    color: $body-color
+    &:hover
+        color: $secondary
+        font-style: none
+
 h1, h2, .title, .subtitle
-    color: $h-color
+    color: $primary
 
 .title
     font-weight: 400
@@ -39,9 +45,21 @@ h1, h2, .title, .subtitle
 ul
     padding: 0
 
+div.intro-text > p
+    color: $h-color
+    @include mobile
+        font-size: $size-4
+
+// need to change this section for reactive design
+span#greeting
+    @include mobile
+        display: none;
+
+
+// need to change this section for reactive design
 h1.terminal-text
     animation: blink-caret .75s step-end infinite, typing 3s steps(16, end)
-    border-right: .40em solid $secondary
+    border-right: .40em solid $body-color
     text-align: center
     overflow: hidden
     margin-left: auto
@@ -49,9 +67,13 @@ h1.terminal-text
     white-space: nowrap
     width: 80%
     @include mobile
-        border-right: none
-        white-space: pre-wrap
-        animation: none
+        animation: blink-caret .75s step-end infinite, typing 3s steps(11)
+        border-right: .40em solid $body-color
+        text-align: center
+        margin-left: auto
+        margin-right: auto
+        overflow: hidden
+        white-space: nowrap
         width: 100%
 
 
@@ -59,7 +81,7 @@ span#terminal-start
     color: $secondary
     overflow: hidden
     @include mobile
-        visibility: hidden
+        display: none
 
 @keyframes typing 
   from 
@@ -68,7 +90,7 @@ span#terminal-start
       width: 75% 
   @include mobile
     from 
-        width: 0 
+        width: 10% 
     to 
         width: 100% 
 
@@ -79,10 +101,10 @@ span#terminal-start
   from, to 
        border-color: transparent 
   50% 
-      border-color: $secondary
+      border-color: $body-color
 
 
-
+// profile image
 img, .profile
     width: 25%
     height: 25%
@@ -218,7 +240,9 @@ hr
 
 .markdown
     p
-        margin-bottom: 1em
+        text-align: left
+        @include mobile
+            text-align: center
     h1
         font-size: $size-1
         @include mobile

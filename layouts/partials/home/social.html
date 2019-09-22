@@ -1,6 +1,6 @@
 <div class="social-icons">
     {{ range .Site.Params.social }}
-    <a href="{{ .url }}">
+    <a class="s-icons" href="{{ .url }}">
         <i class="fa{{ .type }} fa-{{ .icon }}"></i>
     </a>
     {{ end }}

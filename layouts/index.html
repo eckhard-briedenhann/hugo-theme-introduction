@@ -17,9 +17,9 @@
                         <!-- Title and tagline -->
                         <!-- <h1 class="bold-title {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in one{{ end }}"> -->
                         <h1 class="bold-title terminal-text">
-                             <span id="terminal-start">> </span> {{ .Title }} 
+                             <span id="terminal-start">> </span><span id="greeting">{{ .Params.greeting }} </span>{{ .Title }} 
                         </h1>
-                        <div class="subtitle is-3 {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in two{{ end }}">
+                        <div class="intro-text subtitle is-3 {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in two{{ end }}">
                             {{ .Content }}
                         </div>
                         <!-- End title and tagline -->
@@ -46,7 +46,7 @@
                 <!-- Range through all sections in /home execept contact.md -->
                 <div class="section" id="{{ .File.TranslationBaseName }}">
                     <div class="container">
-                        <h2 class="title is-2 has-text-centered">{{ .Title }}</h2>
+                        <!-- <h2 class="title is-2 has-text-centered">{{ .Title }}</h2> -->
                         {{ if .Params.Image }}
                         <div class="columns">
                             <div class="column is-one-third has-text-centered">
